@@ -1,0 +1,42 @@
+{
+  "name": "snes-landing-page",
+  "version": "1.0.0",
+  "description": "My Snes product landing page",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Errec/snes-landing-page.git"
+  },
+  "keywords": [
+    "snes",
+    "landing-page",
+    "responsive"
+  ],
+  "author": "errec",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Errec/snes-landing-page/issues"
+  },
+  "homepage": "https://github.com/Errec/snes-landing-page#readme",
+  "devDependencies": {
+    "beeper": "^1.1.1",
+    "browser-sync": "^2.18.8",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-cache": "^0.4.6",
+    "gulp-clean-css": "^3.2.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^3.2.0",
+    "gulp-notify": "^3.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-pug": "^3.3.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-uglify": "^2.1.2",
+    "gulp-util": "^3.0.8"
+  }
+}
