@@ -1,4 +1,5 @@
 .section-hero
+  overflow: hidden
   margin-top: 40px
   position: relative
   background-color: pink
@@ -34,3 +35,18 @@
   100%
     height: 100%
 
+.section-hero__cover
+  position: absolute
+  width: 100%
+  height: 100%
+  background-image: url("../img/sm.jpg")
+  background-size: cover
+  transform-origin: center center 0
+  animation: bg-zoomin 5s normal forwards ease-in
+  transform: scale(1.07)
+
+@keyframes bg-zoomin
+  0%
+    transform: scale(1)
+  100
+    transform: scale(1.07)
