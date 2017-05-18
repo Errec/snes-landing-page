@@ -1,0 +1,24 @@
+.section-hero
+  margin-top: 40px
+  position: relative
+  background-color: pink
+  height: 500px
+  width: 90%
+
+.section-hero__curtain
+  position: absolute
+  width: 100%
+  background-color: blue
+
+.section-hero__curtain--fix-bottom
+  height: 100%
+  bottom: 0px
+  animation: shrink-top-bottom 1s ease-in-out 0s
+  animation-fill-mode: forwards
+
+@keyframes shrink-top-bottom
+  0%
+    height: 100%
+  100%
+    height: 0px
+
