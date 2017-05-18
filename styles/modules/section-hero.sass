@@ -12,25 +12,25 @@
   width: 100%
   background-color: blue
 
-.section-hero__curtain--fix-bottom
+.section-hero__curtain--hide
   height: 100%
   bottom: 0px
-  animation: shrink-top-bottom 1s ease-in-out 0s
+  animation: curtain-hide 1s ease-in-out 0s
   animation-fill-mode: forwards
 
-.section-hero__curtain--fix-bottom
+.section-hero__curtain--show
   height: 0px
   top: 0px
-  animation: fill-bottom-top 1s ease-in-out 0s
+  animation: curtain-show 1s ease-in-out 0s
   animation-fill-mode: forwards
 
-@keyframes shrink-top-bottom
+@keyframes curtain-hide
   0%
     height: 100%
   100%
     height: 0px
 
-@keyframes fill-bottom-top
+@keyframes curtain-show
   0%
     height: 0px
   100%
