@@ -7,6 +7,7 @@
   width: 90%
 
 .section-hero__curtain
+  z-index: 20
   position: absolute
   width: 100%
   background-color: blue
@@ -36,6 +37,7 @@
     height: 100%
 
 .section-hero__cover
+  z-index: 10
   position: absolute
   width: 100%
   height: 100%
@@ -50,3 +52,13 @@
     transform: scale(1)
   100
     transform: scale(1.07)
+
+.section-hero__logo
+  position: absolute
+  width: 100%
+  height: 100%
+  z-index: 30
+  background-image: url("../img/logo-bottom.png")
+  background-size: 40%
+  background-repeat: no-repeat
+  background-position: center 60%
