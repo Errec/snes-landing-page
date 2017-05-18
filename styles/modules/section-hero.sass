@@ -16,9 +16,21 @@
   animation: shrink-top-bottom 1s ease-in-out 0s
   animation-fill-mode: forwards
 
+.section-hero__curtain--fix-bottom
+  height: 0px
+  top: 0px
+  animation: fill-bottom-top 1s ease-in-out 0s
+  animation-fill-mode: forwards
+
 @keyframes shrink-top-bottom
   0%
     height: 100%
   100%
     height: 0px
+
+@keyframes fill-bottom-top
+  0%
+    height: 0px
+  100%
+    height: 100%
 
