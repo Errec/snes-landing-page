@@ -1,6 +1,14 @@
 @import 'base/normalize.scss'
 @import 'base/reset.scss'
 
+html, body
+  height: 100%
+  width: 100%
+
+h1, h2, h3, p, ul
+  margin: 0
+  padding: 0
+
 @import 'modules/section-hero.sass'
 @import 'modules/section-play-cover-slogan.sass'
 @import 'modules/section-play-grid-top.sass'
@@ -9,10 +17,3 @@
 @import 'modules/section-peripherals-hero.sass'
 @import 'modules/section-peripherals-sliders.sass'
 
-html, body
-  height: 100%
-  width: 100%
-
-h1, h2, h3, p, ul
-  margin: 0
-  padding: 0
