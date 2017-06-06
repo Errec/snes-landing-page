@@ -29,15 +29,14 @@ var animateHeroCurtain = (function(){
       _swapCurtain();
     }, 4000);
     setTimeout(function() {
-    _swapCover();
+      _swapCover();
       _swapCurtain();
     }, 5000);
   }
 
   function _swapCover() {
-    myClassAdmin.addClass(heroCovers[curtainIndex % 4], 'hero__cover-hide');
+    myClassAdmin.addClass(heroCovers[curtainIndex % 4], 'hero__cover--hide');
     curtainIndex++;
-    myClassAdmin.removeClass(heroCovers[curtainIndex % 4], 'hero__cover-hide');
+    myClassAdmin.removeClass(heroCovers[curtainIndex % 4], 'hero__cover--hide');
   }
-
 })();
