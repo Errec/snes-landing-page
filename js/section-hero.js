@@ -1,4 +1,4 @@
-var animateHeroCurtain = (function(){
+var animateHeroCurtain = (function() {
   var heroCurtain = document.getElementById('hero-curtain');
   var heroCovers  = document.querySelectorAll('.hero__cover');
 
@@ -38,5 +38,23 @@ var animateHeroCurtain = (function(){
     myClassAdmin.addClass(heroCovers[curtainIndex % 4], 'hero__cover--hide');
     curtainIndex++;
     myClassAdmin.removeClass(heroCovers[curtainIndex % 4], 'hero__cover--hide');
+  }
+})();
+
+var retractHero = (function() {
+  heroDiv  = document.getElementById('hero');
+  heroLogo = document.getElementById('hero-logo');
+
+  window.addEventListener('scroll', _checkHeroPosition);
+
+  function _checkHeroPosition() {
+    if (window.scrollY > 50) {
+      myClassAdmin.addClass(heroDiv, 'hero--retract');
+      myClassAdmin.addClass(heroLogo, 'hero__logo--fade');
+    }
+    if (window.scrollY < 50 && myClassAdmin.hasClass(heroDiv, 'hero--retract')) {
+      myClassAdmin.removeClass(heroDiv, 'hero--retract');
+      myClassAdmin.removeClass(heroLogo, 'hero__logo--fade');
+    }
   }
 })();
