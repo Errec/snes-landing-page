@@ -37,3 +37,22 @@ var fadeText = (function() {
     });
   }
 })();
+
+var toggleModal = (function() {
+  var openBtn  = document.getElementById('modal-open');
+  var closeBtn = document.getElementById('modal-close');
+  var modal    = document.getElementById('modal');
+
+  openBtn.addEventListener('click', _openModal);
+  closeBtn.addEventListener('click', _closeModal);
+
+  function _openModal() {
+    console.log('heyyy');
+    myClassAdmin.addClass(modal, 'play__grid-modal--show');
+    // _modalCountdown(); TODO
+  }
+
+  function _closeModal() {
+    myClassAdmin.removeClass(modal, 'play__grid-modal--show');
+  }
+})();
