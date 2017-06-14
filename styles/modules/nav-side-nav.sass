@@ -1,7 +1,7 @@
 .side-nav__grid-wrapper
   display: inline-block
   background-color: rgba(0,0,0,0.2)
-  padding: 14px 10px
+  padding: 14px 10px 0 10px
   position: fixed
   right: 0
   top: 50%
@@ -9,6 +9,7 @@
   z-index: 3000
 
 .side-nav__item
+  cursor: pointer
   border: white solid 3px
   list-style: none
   width: 11px
@@ -17,3 +18,40 @@
   background-color: black
   &:last-child
     margin-bottom: 0
+  &:before
+    visibility: hidden
+    opacity: 0
+    font-size: 0.8rem
+    position: relative
+    padding: 5px
+    float: right
+    right: 18px
+    bottom: 10px
+    background-color: #F8A91C
+    transition: all 0.3s ease-out
+    &:hover
+      visibility: visible
+      opacity: 1
+  &:hover:before
+    visibility: visible
+    opacity: 1
+
+#side-item-0
+  &:before
+    content: 'Top'
+
+#side-item-1
+  &:before
+    content: 'Play'
+
+#side-item-2
+  &:before
+    content: 'Peripherals'
+
+#side-item-3
+  &:before
+    content: 'Controller'
+
+#side-item-4
+  &:before
+    content: 'Games'
