@@ -64,13 +64,23 @@
   margin-right: 24px
 
 .controller__about
+  background:
+    image: url("../img/bprint.jpg")
+    repeat: repeat
   width: 100%
   border: solid brown 2px
   padding: 64px 5%
+  animation: slide 60000s linear infinite;
   &:after
     content: ""
     display: table
     clear: both
+
+@keyframes slide
+  0%
+    background-position: 0
+  100%
+    background-position: -1000000px
 
 .controller__quote
   padding-right: 5%
