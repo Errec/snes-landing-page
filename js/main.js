@@ -215,7 +215,7 @@ function debounce(func, wait, options) {
      * globals
      */
     var Element = w.HTMLElement || w.Element;
-    var SCROLL_TIME = 300;
+    var SCROLL_TIME = 320;
 
     /*
      * object gathering original scroll methods
