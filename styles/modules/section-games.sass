@@ -1,6 +1,6 @@
 .games
   position: relative
-  padding-top: 60vw
+  padding-top: 52vw
   background-color: lightblue
 
 .games__wrapper
@@ -13,7 +13,7 @@
 .games__title
   position: relative
   z-index: 30
-  height: 20vw
+  height: 15vw
 
 .games__logo
   height: 100%
@@ -24,21 +24,21 @@
   overflow: hidden
 
 .games__sliders
-  height: 20vw
-  margin-top: 30px
+  height: 25vw
+  margin-top: 8%
   border: solid black 2px
-  margin-left: -50vw
-  margin-right: -50vw
+  background:
+    image: url("../img/sm.jpg")
+    repeat: repeat
+    size: contain
+  width: 100%
+  animation: slide-games 60000s linear infinite;
 
-.games__slider-img-wrapper
-  font-size: 0
-  background-color: darkgreen
-  height: 100%
-  display: inline-block
-
-.games__slider-img
-  height: 100%
-  width: 25vw
+@keyframes slide-games
+  0%
+    background-position: 0
+  100%
+    background-position: -1000000px
 
 .games__bg-characters
   z-index: 20
