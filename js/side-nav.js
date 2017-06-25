@@ -1,5 +1,4 @@
 var sideNavScroll = (function() {
-  // document.querySelector('.hello').scrollIntoView({ behavior: 'smooth' });
   var btTop         = document.getElementById('side-item-0');
   var btPlay        = document.getElementById('side-item-1');
   var btPeripherals = document.getElementById('side-item-2');
@@ -35,5 +34,4 @@ var sideNavScroll = (function() {
   function _scrollGames() {
     divGames.scrollIntoView({behavior: 'smooth' });
   }
-
 })();
