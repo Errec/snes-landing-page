@@ -40,6 +40,7 @@ var checkNavItem = (function() {
   var navGrid        = document.querySelector('.side-nav__grid');
 
   var divHero        = document.querySelector('.hero');
+  var divPlaySlogan  = document.querySelector('.play__slogan');
   var divPlay_top    = document.querySelector('.play__grid-top');
   var divPlay        = document.querySelector('.play');
   var divPeripherals = document.querySelector('.peripherals');
@@ -55,7 +56,7 @@ var checkNavItem = (function() {
   function _checkYPosition(){
     var top = window.scrollY;
     switch (true) {
-      case  top - divHero.offsetTop >= -50 && top < 10:
+      case  top - divHero.offsetTop >= -50 && top < divPlaySlogan.offsetTop + divPlaySlogan.clientHeight:
         if (!myClassAdmin.hasClass(navGrid, 'side-nav__grid--check-1')) {
           myClassAdmin.replaceClass(navGrid, regexClassName, 'side-nav__grid--check-1');
         }
