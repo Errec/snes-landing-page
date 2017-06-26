@@ -1,10 +1,14 @@
 //Modified from https://jaketrent.com/post/addremove-classes-raw-javascript/
 var myClassAdmin = {
   hasClass: function(element, myClassName) {
-    if (element.classList) {
+    if (element.classList && !(myClassName instanceof RegExp)) {
       return element.classList.contains(myClassName);
     } else {
+      if (myClassName instanceof RegExp) {
+        return !!element.className.match(myClassName);
+      } else {
         return !!element.className.match(new RegExp('\\b' + myClassName + '\\b'));
+      }
     }
   },
   addClass: function(element, myClassName) {
@@ -19,15 +23,15 @@ var myClassAdmin = {
       element.classList.remove(myClassName);
     } else if (hasClass(element, myClassName)) {
         var reg = new RegExp('\\b' + myClassName + '\\b');
-        element.className=element.className.replace(reg, ' ');
+        element.className = element.className.replace(reg, ' ');
     }
   },
   replaceClass: function(element, myOldClass, myNewClass) {
-    if (element.classList) {
+    if (element.classList && !(myOldClass instanceof RegExp)) {
       element.classList.remove(myOldClass);
       element.classList.add(myNewClass);
     } else {
-      element.className.replace(myOldClass, myNewClass);
+      element.className = element.className.replace(myOldClass, myNewClass);
     }
   }
 };
