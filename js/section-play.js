@@ -38,21 +38,53 @@ var fadeText = (function() {
   }
 })();
 
-var toggleModal = (function() {
+var modal = (function() {
   var openBtn  = document.getElementById('modal-open');
   var closeBtn = document.getElementById('modal-close');
   var modal    = document.getElementById('modal');
+  var row      = document.querySelector('.play__grid-modal-slide-wrapper');
 
-  openBtn.addEventListener('click', _openModal);
-  closeBtn.addEventListener('click', _closeModal);
+  var countdown  = null;
+  var resetTimer = null;
+  var WIDTH      = 50;
+  var IMGS_COUNT = 4;
 
-  function _openModal() {
-    console.log('heyyy');
-    myClassAdmin.addClass(modal, 'play__grid-modal--show');
-    // _modalCountdown(); TODO
+  openBtn.addEventListener('click', throttle(_toggleModal, 3000));
+  closeBtn.addEventListener('click', throttle(_toggleModal, 2000));
+
+  function _toggleModal() {
+    if (myClassAdmin.hasClass(modal, 'play__grid-modal--show')) {
+      myClassAdmin.removeClass(modal, 'play__grid-modal--show');
+      _resetModal();
+    } else {
+      myClassAdmin.addClass(modal, 'play__grid-modal--show');
+      _modalCountdown(1, WIDTH, 4, IMGS_COUNT);
+    }
+
   }
 
-  function _closeModal() {
-    myClassAdmin.removeClass(modal, 'play__grid-modal--show');
+  function _resetModal() {
+    clearInterval(resetTimer);
+    resetTimer = setTimeout(function() {
+      row.style.transform = "";
+    }, 500);
+    clearInterval(countdown);
+  }
+
+  function _modalCountdown(position, WIDTH, seconds, IMGS_COUNT) {
+    clearInterval(countdown);
+    clearInterval(resetTimer);
+    row.style.transform = "translateX(-" + (WIDTH * (position - 1)) + "vw)";
+    countdown = setInterval(_moveFrame, seconds * 1000);
+
+    function _moveFrame() {
+      if (position >= IMGS_COUNT) {
+        _toggleModal();
+        _resetModal();
+        return;
+      }
+      row.style.transform = "translateX(-" + WIDTH * position + "vw)";
+      position++;
+    }
   }
 })();
