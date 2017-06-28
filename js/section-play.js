@@ -103,7 +103,6 @@ var modal = (function() {
           myClassAdmin.removeClass(el, 'play__grid-modal-slider-progress-bar--animate-bg');
         });
         setTimeout(function() {
-          myClassAdmin.addClass(progressBars[position - 1], 'play__grid-modal-slider-progress-bar--animate-bg');
         }, 1);
     } else {
         Array.prototype.forEach.call(progressBars, function(el) {

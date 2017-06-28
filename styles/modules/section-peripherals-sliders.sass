@@ -16,10 +16,37 @@
   padding: 0 12px
 
 .peripherals__slider-img-wrapper
-  background-color: grey
+  background: transparent
+  position: relative
+  overflow: hidden
   height: 25vw
 
+.peripherals__slider-img
+  position: absolute
+  width: 100%
+  height: 100%
+
+.peripherals__slider-img-0
+  // transform: translateX(30%)
+  background-color: red
+  z-index: 100
+
+.peripherals__slider-img-1
+  // transform: translateX(20%)
+  background-color: green
+  z-index: 50
+
+.peripherals__slider-img-2
+  // transform: translateX(10%)
+  background-color: blue
+  z-index: 0
+
+.peripherals__slider-img--translate
+  transform: translateX(100%)
+  transition: all 0.8s ease-in-out
+
 .peripherals__slider-legend
+  z-index: 100
   position: absolute
   height: 50px
   background-color: black
@@ -31,3 +58,4 @@
 .peripherals__slider-text
   margin-top: 20%
   margin-bottom: 12px
+
