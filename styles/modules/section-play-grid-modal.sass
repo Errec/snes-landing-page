@@ -1,17 +1,36 @@
 .play__grid-modal
+  position: absolute
   z-index: 30
   visibility: hidden
   opacity: 0
   height: 100%
   width: 100%
   top: 0
+  bottom: 0
+  left: 0
+  right: 0
   background-color: black
-  position: absolute
   transition: all 0.5s ease-in-out
+  &:after
+    transition: opacity 0.8s ease-in-out
+    opacity: 1
+    pointer-events: none
+    z-index: 300
+    content: ""
+    width: 100%
+    height: 100%
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    background-color: black
 
 .play__grid-modal--show
-  visibility: visible
   opacity: 1
+  visibility: visible
+  &:after
+    opacity: 0
 
 .play__grid-modal-close-btn
   z-index: 20
@@ -21,6 +40,23 @@
   background-color: gold
   top: 24px
   right: 12px
+
+.play__grid-modal-curtain
+  pointer-events: none
+  position: absolute
+  opacity: 1
+  top: 50%;
+  transform: translateY(-50%);
+  height: 0
+  width: 100%
+  margin: 0 auto
+  background-color: black
+  z-index: 100
+  transition: height 0.4s ease-in, opacity 2s ease-in-out
+
+.play__grid-modal-curtain--close
+  height: 100%
+  opacity: 0
 
 .play__grid-modal-slider
   overflow: hidden
@@ -43,7 +79,7 @@
 .play__grid-modal-slider-img
   object-fit: cover
   width: 100%
-  height: auto
+  height: 100%
 
 .play__grid-modal-slider-progress
   position: absolute
@@ -62,7 +98,6 @@
   background-color: white
 
 .play__grid-modal-slider-progress-bar
-  transition: all 0.1s ease-in-out
   width: 100%
   height: 100%
 

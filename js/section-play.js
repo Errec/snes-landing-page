@@ -42,6 +42,7 @@ var modal = (function() {
   var openBtn      = document.getElementById('modal-open');
   var closeBtn     = document.getElementById('modal-close');
   var modal        = document.getElementById('modal');
+  var curtain      = document.getElementById('modal-curtain');
   var row          = document.querySelector('.play__grid-modal-slide-wrapper');
   var progressGrid = document.querySelector('.play__grid-modal-slider-progress');
   var progressBars = document.querySelectorAll('.play__grid-modal-slider-progress-bar');
@@ -53,17 +54,19 @@ var modal = (function() {
   var ANIMATION_TIME = 4;
   var myPosition     = 0;
 
-  openBtn.addEventListener('click', throttle(_toggleModal, 2000));
-  closeBtn.addEventListener('click', throttle(_toggleModal, 2000));
+  openBtn.addEventListener('click', throttle(_toggleModal, 500));
+  closeBtn.addEventListener('click', throttle(_toggleModal, 500));
   progressGrid.addEventListener('click', _goToImg);
 
   function _toggleModal() {
     if (myClassAdmin.hasClass(modal, 'play__grid-modal--show')) {
       myClassAdmin.removeClass(modal, 'play__grid-modal--show');
+      myClassAdmin.removeClass(curtain, 'play__grid-modal-curtain--close');
       _resetModal();
       _clearBarAnination();
     } else {
       myClassAdmin.addClass(modal, 'play__grid-modal--show');
+      myClassAdmin.addClass(curtain, 'play__grid-modal-curtain--close');
       _modalCountdown(1, WIDTH, ANIMATION_TIME, IMGS_COUNT);
     }
   }
