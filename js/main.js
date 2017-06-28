@@ -14,7 +14,7 @@ var myClassAdmin = {
   addClass: function(element, myClassName) {
     if (element.classList) {
       element.classList.add(myClassName);
-    } else if (!hasClass(element, myClassName)) {
+    } else if (!this.hasClass(element, myClassName)) {
         element.className += " " + myClassName;
       }
   },

@@ -33,8 +33,6 @@
   transform: translateX(0)
   transition: transform 0.8s ease-in-out
 
-.play__grid-modal-slide-wrapper--translate
-
 .play__grid-modal-slide
   font-size: 0
   margin-right: 1vw
@@ -53,10 +51,32 @@
   left: 50%
   transform: translateX(-50%)
 
-.play__grid-modal-slider-progress-bar
+.play__grid-modal-slider-progress-bar-wrapper
+  overflow: hidden
+  border-radius: 2px
   cursor: pointer
-  height: 4px
-  width: 28px
-  background-color: red
+  height: 5px
+  width: 32px
   display: inline-block
-  margin: 0 6px
+  margin: 0 5px
+  background-color: white
+
+.play__grid-modal-slider-progress-bar
+  width: 100%
+  height: 100%
+
+.play__grid-modal-slider-progress-bar--animate-bg
+  background-color: red
+  opacity: 1
+  transform: translateX(-100%)
+  animation: change-bg 4s ease-in-out
+
+@keyframes change-bg
+  0%
+    opacity: 1
+    transform: translateX(-100%)
+  90%
+    opacity: 1
+  100%
+    opacity: 0
+    transform: translateX(0)
