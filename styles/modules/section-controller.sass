@@ -2,7 +2,6 @@
   width: 100%
 
 .controller__hero
-  border: solid purple 2px
   text-align: center
   width: 100%
   &:after
@@ -13,8 +12,11 @@
 .controller__d-pad
   transform: translateY(-50px)
   width: 33.333%
-  border: solid red 2px
   float: left
+
+.controller__hero-img
+  height: 100%
+  width: 100%
 
 .controller__d-pad--translation
   transform: translateY(0)
@@ -22,13 +24,11 @@
 
 .controller__middle
   width: 33.333%
-  border: solid green 2px
   float: left
 
 .controller__buttons
   transform: translateY(50px)
   width: 33.333%
-  border: solid blue 2px
   float: left
 
 .controller__buttons--translation
@@ -37,7 +37,6 @@
 
 .controller__detail-img
   position: relative
-  border: solid yellow 2px
 
 .controller__pad-img
   position: absolute
@@ -55,7 +54,7 @@
   background-size: cover
   background-position: center center
   background-repeat: no-repeat
-  background-image: url("http://placehold.it/350x250")
+  background-image: url("../img/controller/controller-in-hand-m04.png")
 
 .controller__detail-text
   position: relative
@@ -65,10 +64,10 @@
 
 .controller__about
   background:
-    image: url("../img/bprint.jpg")
-    repeat: repeat
+    image: url("../img/controller/roll-bg-m01.jpg")
+    repeat: repeat-X
+    size: 60%
   width: 100%
-  border: solid brown 2px
   padding: 64px 5%
   animation: slide-controller 60000s linear infinite;
   &:after

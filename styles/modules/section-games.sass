@@ -1,7 +1,7 @@
 .games
   position: relative
   padding-top: 52vw
-  background-color: lightblue
+  background-color: black
 
 .games__wrapper
   position: absolute
@@ -26,11 +26,10 @@
 .games__sliders
   height: 25vw
   margin-top: 8%
-  border: solid black 2px
   background:
-    image: url("../img/sm.jpg")
+    image: url("../img/games/roll-bg-m03.png")
     repeat: repeat
-    size: contain
+    size: cover
   width: 100%
   animation: slide-games 60000s linear infinite;
 
@@ -42,7 +41,10 @@
 
 .games__bg-characters
   z-index: 20
-  background-color: orange
+  background:
+    repeat: no-repeat
+    size: cover
+    image: url("../img/games/dk-m01.png")
   position: absolute
   height: 100%
   left: 45%
@@ -52,12 +54,12 @@
   transition: all 0.8s ease-in-out
 
 .games__bg-characters--1
-  background-color: orange
+  background-image: url("../img/games/dk-m01.png")
 .games__bg-characters--2
-  background-color: green
+  background-image: url("../img/games/samus.png")
 .games__bg-characters--3
-  background-color: blue
+  background-image: url("../img/games/fzero01-m01.png")
 .games__bg-characters--4
-  background-color: red
+  background-image: url("../img/games/dk-m01.png")
 .games__bg-characters--5
-  background-color: black
+  background-image: url("../img/games/samus.png")
