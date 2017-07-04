@@ -35,9 +35,9 @@ var animateHeroCurtain = (function() {
   }
 
   function _swapCover() {
-    myClassAdmin.addClass(heroCovers[curtainIndex % 4], 'hero__cover--hide');
+    myClassAdmin.addClass(heroCovers[curtainIndex % 5], 'hero__cover--hide');
     curtainIndex++;
-    myClassAdmin.removeClass(heroCovers[curtainIndex % 4], 'hero__cover--hide');
+    myClassAdmin.removeClass(heroCovers[curtainIndex % 5], 'hero__cover--hide');
   }
 })();
 
