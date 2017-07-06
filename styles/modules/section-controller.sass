@@ -66,9 +66,9 @@
   background:
     image: url("../img/controller/roll-bg-m01.png")
     repeat: repeat-X
-    size: 60%
+    size: contain
   width: 100%
-  padding: 64px 5%
+  padding: 64px 128px
   animation: slide-controller 60000s linear infinite;
   &:after
     content: ""
@@ -85,34 +85,44 @@
   padding-right: 5%
   float: left
   width: 50%
-  margin-top: 15vh
+  margin-top: 22vh
   h2
-    font-size: 3.2rem
-    color: red
+    font-size: 3.4rem
+    color: #F31D0A
 
 .controller__info--wrapper
   float: right
   width: 50%
 
 .controller__info
+  position: relative
   line-height: 1.4rem
 
 .controller__info-title
+  border-radius: 4px
   display: inline-block
-  background-color: red
-  padding: 4px 16px
-  margin-bottom: 36px
+  background-color: #F31D0A
+  padding: 10px 18px
+  margin-bottom: 40px
   span
     font-weight: bold
-    font-size: 1.2rem
+    font-size: 1.5rem
     color: white
 
 .controller__info-top
   margin-bottom: 64px
 
+.controller__info-text
+  text-align: justify
+  font-size: 1.1rem
+  font-weight: bold
+  line-height: 1.6
+
 .controller__info-bottom-text
-  padding-left: 150px
-  height: 140px
-  background-image: url("http://placehold.it/350x250")
-  background-size: 140px auto
-  background-repeat: no-repeat
+  padding-left: 175px
+
+.controller__info-nes-icon
+  position: absolute
+  height: 160px
+  width: auto
+  top: 70px
