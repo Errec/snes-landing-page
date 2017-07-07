@@ -9,7 +9,6 @@ var retractHero = (function() {
   }
 
   function _checkHeroPosition() {
-    console.log(window.scrollY)
     if (window.scrollY > 25) {
       myClassAdmin.addClass(heroDiv, 'hero--retract');
       myClassAdmin.replaceClass(heroLogo,'hero__logo--show' , 'hero__logo--fade');
