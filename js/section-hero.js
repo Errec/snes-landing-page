@@ -4,14 +4,19 @@ var retractHero = (function() {
 
   window.addEventListener('scroll', throttle(_checkHeroPosition, 150));
 
+  if (window.scrollY < 50) {
+    myClassAdmin.replaceClass(heroLogo,'hero__logo--fade' , 'hero__logo--show');
+  }
+
   function _checkHeroPosition() {
-    if (window.scrollY > 50) {
+    console.log(window.scrollY)
+    if (window.scrollY > 25) {
       myClassAdmin.addClass(heroDiv, 'hero--retract');
-      myClassAdmin.addClass(heroLogo, 'hero__logo--fade');
+      myClassAdmin.replaceClass(heroLogo,'hero__logo--show' , 'hero__logo--fade');
     }
-    if (window.scrollY < 50 && myClassAdmin.hasClass(heroDiv, 'hero--retract')) {
+    if (window.scrollY < 25 && myClassAdmin.hasClass(heroDiv, 'hero--retract')) {
+      myClassAdmin.replaceClass(heroLogo,'hero__logo--fade' , 'hero__logo--show');
       myClassAdmin.removeClass(heroDiv, 'hero--retract');
-      myClassAdmin.removeClass(heroLogo, 'hero__logo--fade');
     }
   }
 })();
