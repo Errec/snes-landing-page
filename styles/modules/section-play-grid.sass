@@ -1,0 +1,82 @@
+.play__grid
+  width: 100%
+  height: 50vw
+  padding: 54px 44px
+
+.play__grid-wrapper
+  overflow: hidden
+  height: 100%
+  width: 100%
+
+.play__img-group-wrapper
+  height: 50%
+  width: 100%
+  &:first-child
+    margin-bottom: 12px
+  &:last-child
+    margin-top: 12px
+
+.play__img-wrapper
+  position: relative
+  font-size: 0
+  display: inline-block
+  height: 100%
+
+.play__img
+  overflow: hidden
+  height: 100%
+  width: 100%
+  background:
+    size: cover
+    repeat: no-repeat
+
+.play__img-overlay
+  width: 100%
+  height: 100%
+  background-color: black
+  transition: transform 0.7s ease-in-out
+
+.play__img-overlay--show-img
+  transform: translateX(100%)
+
+.grid-playing-img-0
+  width: 66.666%
+  padding-right: 12px
+  .play__img
+    background-image: url("../img/play/bt-grid/wide.jpg")
+.grid-playing-img-1
+  width: 33.333%
+.grid-playing-img-2
+  width: 33.333%
+  .play__img
+    background-image: url("../img/play/bt-grid/small1.jpg")
+.grid-playing-img-3
+  width: 33.333%
+  padding: 0 12px
+  .play__img
+    background-image: url("../img/play/bt-grid/small2.jpg")
+.grid-playing-img-4
+  width: 33.333%
+  .play__img
+    background-image: url("../img/play/bt-grid/small3.jpg")
+
+.grid-graphics-img-0
+  width: 70%
+  .play__img
+    background-image: url("../img/play/top-grid/wide1.jpg")
+.grid-graphics-img-1
+  width: 30%
+.grid-graphics-img-2
+  padding-right: 12px
+  width: 25%
+  .play__img
+    background-image: url("../img/play/top-grid/small1.jpg")
+.grid-graphics-img-3
+  padding-right: 12px
+  width: 25%
+  .play__img
+    background-image: url("../img/play/top-grid/small2.jpg")
+.grid-graphics-img-4
+  width: 50%
+  .play__img
+    background-image: url("../img/play/top-grid/wide2.png")
