@@ -5,7 +5,7 @@ var sideNavScroll = (function() {
   var btController  = document.getElementById('side-item-3');
   var btGames       = document.getElementById('side-item-4');
 
-  var divPlay        = document.querySelector('.play__grid-top');
+  var divPlay        = document.querySelector('.play__grid-playing');
   var divPeripherals = document.querySelector('.peripherals');
   var divController  = document.querySelector('.controller');
   var divGames       = document.querySelector('.games');
@@ -41,7 +41,7 @@ var checkNavItem = (function() {
 
   var divHero        = document.querySelector('.hero');
   var divPlaySlogan  = document.querySelector('.play__slogan');
-  var divPlay_top    = document.querySelector('.play__grid-top');
+  var divPlay_top    = document.querySelector('.play__grid-playing');
   var divPlay        = document.querySelector('.play');
   var divPeripherals = document.querySelector('.peripherals');
   var divController  = document.querySelector('.controller');

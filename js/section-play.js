@@ -1,20 +1,14 @@
 var showGridImgs = (function() {
-  var grids = document.querySelectorAll('.play__grid-imgs');
+  var grids = document.querySelectorAll('.play__grid');
 
   window.addEventListener('scroll', debounce(_showGridImg, 100));
 
   function _showGridImg() {
     Array.from(grids).forEach(function(grid) {
-      var currentPosition  = (window.scrollY + window.innerHeight) - grid.parentElement.clientHeight / 2;
-      var gridBottom = grid.parentElement.offsetTop + grid.parentElement.clientHeight;
-      if(currentPosition > grid.parentElement.offsetTop && window.scrollY < gridBottom) {
-        Array.from(grid.children).forEach(function(wrapper) {
-          Array.from(wrapper.children).forEach(function(img) {
-            if (img.dataset.effect !== 'no') {
-            myClassAdmin.addClass(img, 'play__grid--img-effec');
-            }
-          });
-        });
+      var currentPosition  = (window.scrollY + window.innerHeight) - grid.clientHeight / 2;
+      var gridBottom = grid.offsetTop + grid.clientHeight;
+      if(currentPosition > grid.offsetTop && window.scrollY < gridBottom) {
+        myClassAdmin.addClass(grid, 'play__img-overlay--show-img');
       }
     });
   }
