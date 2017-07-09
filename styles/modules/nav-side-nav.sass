@@ -8,6 +8,10 @@
   right: 0
   border-radius: 6px 0 0 6px
   transform: perspective(1px) translateY(-60%)
+  transition: transform 0.4s ease-in-out
+
+.side-nav--hide
+  transform: perspective(1px) translateX(100%) translateY(-60%)
 
 .side-nav__grid
   position: relative
@@ -70,7 +74,7 @@
 
 #side-item-3
   &:before
-    content: 'Games'
+    content: 'Release'
 
 .side-nav__grid--check-1
   li:nth-child(1)

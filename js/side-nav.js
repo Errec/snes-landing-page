@@ -1,27 +1,21 @@
 var sideNavScroll = (function() {
-  var btTop         = document.getElementById('side-item-0');
-  var btPlay        = document.getElementById('side-item-1');
-  var btPeripherals = document.getElementById('side-item-2');
-  var btController  = document.getElementById('side-item-3');
-  var btGames       = document.getElementById('side-item-4');
+  var btPlay        = document.getElementById('side-item-0');
+  var btPeripherals = document.getElementById('side-item-1');
+  var btController  = document.getElementById('side-item-2');
+  var btGames       = document.getElementById('side-item-3');
 
   var divPlay        = document.querySelector('.play__grid-playing');
   var divPeripherals = document.querySelector('.peripherals');
   var divController  = document.querySelector('.controller');
-  var divGames       = document.querySelector('.games');
+  var divRelease     = document.querySelector('.main-footer');
 
-  btTop.addEventListener('click', _scrollTop);
   btPlay.addEventListener('click', _scrollPlay);
   btPeripherals.addEventListener('click', _scrollPeripherals);
   btController.addEventListener('click', _scrollController);
-  // btGames.addEventListener('click', _scrollGames);
-
-  function _scrollTop() {
-    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-  }
+  btGames.addEventListener('click', _scrollRelease);
 
   function _scrollPlay() {
-    divPlay.scrollIntoView({behavior: 'smooth' });
+    window.scroll({ top: divPlay.offsetTop - 600, left: 0, behavior: 'smooth' });
   }
 
   function _scrollPeripherals() {
@@ -31,21 +25,21 @@ var sideNavScroll = (function() {
   function _scrollController() {
     window.scroll({ top: divController.offsetTop + 5, left: 0, behavior: 'smooth' });
   }
-  function _scrollGames() {
-    divGames.scrollIntoView({behavior: 'smooth' });
+  function _scrollRelease() {
+    divRelease.scrollIntoView({behavior: 'smooth' });
   }
 })();
 
 var checkNavItem = (function() {
   var navGrid        = document.querySelector('.side-nav__grid');
+  var nav            = document.querySelector('.side-nav__grid-wrapper');
 
-  var divHero        = document.querySelector('.hero');
   var divPlaySlogan  = document.querySelector('.play__slogan');
   var divPlay_top    = document.querySelector('.play__grid-playing');
   var divPlay        = document.querySelector('.play');
   var divPeripherals = document.querySelector('.peripherals');
   var divController  = document.querySelector('.controller');
-  var divGames       = document.querySelector('.games');
+  var divRelease     = document.querySelector('.main-footer');
 
   var regexClassName  = new RegExp(/side-nav__grid--check-\d/g);
 
@@ -55,30 +49,37 @@ var checkNavItem = (function() {
 
   function _checkYPosition(){
     var top = window.scrollY;
+    var hideNav = true;
     switch (true) {
-      case  top - divHero.offsetTop >= -50 && top < divPlaySlogan.offsetTop + divPlaySlogan.clientHeight:
-        if (!myClassAdmin.hasClass(navGrid, 'side-nav__grid--check-1')) {
+      case  top < 50:
+          hideNav = true;
+          myClassAdmin.addClass(nav, 'side-nav--hide');
+        if (!myClassAdmin.hasClass(nav, 'side-nav__grid--check-0')) {
+          myClassAdmin.replaceClass(navGrid, regexClassName, 'side-nav__grid--check-0');
+        }
+        break;
+      case  top >= 50 && top < divPlay.offsetTop + divPlay.clientHeight:
+        if (!myClassAdmin.hasClass(nav, 'side-nav__grid--check-1')) {
           myClassAdmin.replaceClass(navGrid, regexClassName, 'side-nav__grid--check-1');
         }
-        break;
-      case  top - divPlay_top.offsetTop >= -50 && top < divPlay.offsetTop + divPlay.clientHeight:
-        if (!myClassAdmin.hasClass(navGrid, 'side-nav__grid--check-2')) {
-          myClassAdmin.replaceClass(navGrid, regexClassName, 'side-nav__grid--check-2');
-        }
+        hideNav ? myClassAdmin.removeClass(nav, 'side-nav--hide') : '';
         break;
       case  top - divPeripherals.offsetTop >= -50 && top < divPeripherals.offsetTop + divPeripherals.clientHeight:
-        if (!myClassAdmin.hasClass(navGrid, 'side-nav__grid--check-3')) {
-          myClassAdmin.replaceClass(navGrid, regexClassName, 'side-nav__grid--check-3');
+        if (!myClassAdmin.hasClass(nav, 'side-nav__grid--check-2')) {
+          myClassAdmin.replaceClass(navGrid, regexClassName, 'side-nav__grid--check-2');
+          hideNav ? myClassAdmin.removeClass(nav, 'side-nav--hide') : '';
         }
         break;
       case  top - divController.offsetTop >= -50 && top < divController.offsetTop + divController.clientHeight:
-        if (!myClassAdmin.hasClass(navGrid, 'side-nav__grid--check-4')) {
-          myClassAdmin.replaceClass(navGrid, regexClassName, 'side-nav__grid--check-4');
+        if (!myClassAdmin.hasClass(nav, 'side-nav__grid--check-3')) {
+          myClassAdmin.replaceClass(navGrid, regexClassName, 'side-nav__grid--check-3');
+          hideNav ? myClassAdmin.removeClass(nav, 'side-nav--hide') : '';
         }
         break;
-      case  top - divGames.offsetTop >= -50 && top < divGames.offsetTop + divGames.clientHeight:
-        if (!myClassAdmin.hasClass(navGrid, 'side-nav__grid--check-5')) {
-          myClassAdmin.replaceClass(navGrid, regexClassName, 'side-nav__grid--check-5');
+      case  top - divRelease.offsetTop >= -50 && top < divRelease.offsetTop + divRelease.clientHeight:
+        if (!myClassAdmin.hasClass(nav, 'side-nav__grid--check-4')) {
+          myClassAdmin.replaceClass(navGrid, regexClassName, 'side-nav__grid--check-4');
+          hideNav ? myClassAdmin.removeClass(nav, 'side-nav--hide') : '';
         }
         break;
     }
