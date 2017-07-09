@@ -14,7 +14,7 @@ var sideNavScroll = (function() {
   btPlay.addEventListener('click', _scrollPlay);
   btPeripherals.addEventListener('click', _scrollPeripherals);
   btController.addEventListener('click', _scrollController);
-  btGames.addEventListener('click', _scrollGames);
+  // btGames.addEventListener('click', _scrollGames);
 
   function _scrollTop() {
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
