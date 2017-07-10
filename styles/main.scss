@@ -7,10 +7,14 @@ html, body
 
 body
   overflow-x: hidden
+  font-family: 'Teko', sans-serif
 
 h1, h2, h3, p, ul
   margin: 0
   padding: 0
+
+p
+  font-size: 1.3rem
 
 .main
   position: relative
