@@ -15,7 +15,7 @@ var sideNavScroll = (function() {
   btGames.addEventListener('click', _scrollRelease);
 
   function _scrollPlay() {
-    window.scroll({ top: divPlay.offsetTop - 600, left: 0, behavior: 'smooth' });
+    window.scroll({ top: divPlay.offsetTop - 605, left: 0, behavior: 'smooth' });
   }
 
   function _scrollPeripherals() {
@@ -58,25 +58,25 @@ var checkNavItem = (function() {
           myClassAdmin.replaceClass(navGrid, regexClassName, 'side-nav__grid--check-0');
         }
         break;
-      case  top >= 50 && top < divPlay.offsetTop + divPlay.clientHeight:
+      case  top >= 50 && top < divPlay.offsetTop + divPlay.clientHeight - 200:
         if (!myClassAdmin.hasClass(nav, 'side-nav__grid--check-1')) {
           myClassAdmin.replaceClass(navGrid, regexClassName, 'side-nav__grid--check-1');
         }
         hideNav ? myClassAdmin.removeClass(nav, 'side-nav--hide') : '';
         break;
-      case  top - divPeripherals.offsetTop >= -50 && top < divPeripherals.offsetTop + divPeripherals.clientHeight:
+      case  top - divPeripherals.offsetTop + 200 >= -50 && top < divPeripherals.offsetTop + divPeripherals.clientHeight - 200:
         if (!myClassAdmin.hasClass(nav, 'side-nav__grid--check-2')) {
           myClassAdmin.replaceClass(navGrid, regexClassName, 'side-nav__grid--check-2');
           hideNav ? myClassAdmin.removeClass(nav, 'side-nav--hide') : '';
         }
         break;
-      case  top - divController.offsetTop >= -50 && top < divController.offsetTop + divController.clientHeight:
+      case  top - divController.offsetTop + 200 >= -50 && top < divController.offsetTop + divController.clientHeight - 200:
         if (!myClassAdmin.hasClass(nav, 'side-nav__grid--check-3')) {
           myClassAdmin.replaceClass(navGrid, regexClassName, 'side-nav__grid--check-3');
           hideNav ? myClassAdmin.removeClass(nav, 'side-nav--hide') : '';
         }
         break;
-      case  top - divRelease.offsetTop >= -50 && top < divRelease.offsetTop + divRelease.clientHeight:
+      case  top - divRelease.offsetTop + 200 >= -50 && top < divRelease.offsetTop + divRelease.clientHeight:
         if (!myClassAdmin.hasClass(nav, 'side-nav__grid--check-4')) {
           myClassAdmin.replaceClass(navGrid, regexClassName, 'side-nav__grid--check-4');
           hideNav ? myClassAdmin.removeClass(nav, 'side-nav--hide') : '';
