@@ -18,43 +18,36 @@ var peripheralsSlider = (function() {
   var imgs0 = document.querySelectorAll('.peripherals__slider-img-0');
   var imgs1 = document.querySelectorAll('.peripherals__slider-img-1');
   var imgs2 = document.querySelectorAll('.peripherals__slider-img-2');
-  var translateClass = 'peripherals__slider-img--translate';
-  var animationTime = 4000;
 
-var timer0 = null;
-var timer1 = null;
-var timer2 = null;
+  var classPosition0 = 'peripherals__slider-img--position-0';
+  var classPosition1 = 'peripherals__slider-img--position-1';
+  var classPosition2 = 'peripherals__slider-img--position-2';
 
-timer0 = setInterval(function(){_setMovOrder(imgs0, imgs1, imgs2);}, 1 * animationTime);
-timer1 = setInterval(function(){_setMovOrder(imgs1, imgs2, imgs0);}, 2 * animationTime);
-timer2 = setInterval(function(){_setMovOrder(imgs2, imgs0, imgs1);}, 3 * animationTime);
-
-setInterval(function () {
-  _slideImg();
-}, (3 * animationTime + 1));
-
-  function _slideImg() {
-    clearInterval(timer0);
-    clearInterval(timer1);
-    clearInterval(timer2);
-    _translateDiv(imgs0, imgs1, imgs2);
+  var time = 4500;
+  for (var i = 0; i < imgs0.length; i++) {
+    _moveFrames(imgs0[i], imgs1[i], imgs2[i]);
+    setInterval(function(j) {
+      _moveFrames(imgs0[j], imgs1[j], imgs2[j]);
+    }, 3 * time, i);
   }
 
-  function _translateDiv(img0, img1, img2) {
-    timer0 = setInterval(function(){_setMovOrder(imgs0, imgs1, imgs2);}, 1 * animationTime);
-    timer1 = setInterval(function(){_setMovOrder(imgs1, imgs2, imgs0);}, 2 * animationTime);
-    timer2 = setInterval(function(){_setMovOrder(imgs2, imgs0, imgs1);}, 3 * animationTime);
-  }
+  function _moveFrames(frameElement0, frameElement1, frameElement2) {
+    setTimeout(function() {
+      myClassAdmin.replaceClass(frameElement0, classPosition2, classPosition0);
+      myClassAdmin.replaceClass(frameElement1, classPosition0, classPosition1);
+      myClassAdmin.replaceClass(frameElement2, classPosition1, classPosition2);
+    }, 1 * time);
 
-  function _setMovOrder(currentImg, nextImg, lastImg) {
-    for(var i = 0; i < currentImg.length; i++){
-      currentImg[i].style.zIndex = '100';
-      myClassAdmin.addClass(currentImg[i], translateClass);
+    setTimeout(function() {
+      myClassAdmin.replaceClass(frameElement0, classPosition0, classPosition1);
+      myClassAdmin.replaceClass(frameElement1, classPosition1, classPosition2);
+      myClassAdmin.replaceClass(frameElement2, classPosition2, classPosition0);
+    }, 2 * time);
 
-      lastImg[i].style.zIndex = '0';
-      nextImg[i].style.zIndex = '50';
-      myClassAdmin.removeClass(lastImg[i], translateClass);
-      myClassAdmin.removeClass(nextImg[i], translateClass);
-    }
+    setTimeout(function() {
+      myClassAdmin.replaceClass(frameElement0, classPosition1, classPosition2);
+      myClassAdmin.replaceClass(frameElement1, classPosition2, classPosition0);
+      myClassAdmin.replaceClass(frameElement2, classPosition0, classPosition1);
+    }, 3 * time);
   }
 })();

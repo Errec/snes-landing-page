@@ -21,13 +21,26 @@
   position: relative
 
 .peripherals__slider-img
+  position: absolute
+  width: 100%
+  height: 100%
+  transition: transform 1s ease-in-out
   background:
     size: cover
     repeat: no-repeat
     position: center
-  position: absolute
-  width: 100%
-  height: 100%
+
+.peripherals__slider-img-0
+  z-index: 30
+
+.peripherals__slider-img--position-0
+  z-index: 30
+  transform: translateX(100%)
+.peripherals__slider-img--position-1
+  opacity: 0
+  z-index: 20
+.peripherals__slider-img--position-2
+  z-index: 10
 
 #peripherals__slider-img-0-1
   background-image: url("/img/peripherals/slide/gb1.jpg")
@@ -47,20 +60,6 @@
   background-image: url("/img/peripherals/slide/superscope2.png")
 #peripherals__slider-img-2-3
   background-image: url("/img/peripherals/slide/superscope3.png")
-
-
-.peripherals__slider-img-0
-  z-index: 100
-
-.peripherals__slider-img-1
-  z-index: 50
-
-.peripherals__slider-img-2
-  z-index: 0
-
-.peripherals__slider-img--translate
-  transform: translateX(100%)
-  transition: all 0.8s ease-in-out
 
 .peripherals__slider-legend
   z-index: 100
