@@ -26,6 +26,6 @@ var clickHeroArrow = (function() {
   arrow.addEventListener('click', _scrollDown);
 
   function _scrollDown() {
-    window.scrollBy({ top: 340, left: 0, behavior: 'smooth' });
+    window.scrollBy({ top: 300, left: 0, behavior: 'smooth' });
   }
 })();
