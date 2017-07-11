@@ -1,23 +1,30 @@
 var showGridImgs = (function() {
   var grids = document.querySelectorAll('.play__grid');
 
-  window.addEventListener('scroll', debounce(_showGridImg, 100));
-
-  function _showGridImg() {
+  var _showGridImg = throttle(function() {
     Array.from(grids).forEach(function(grid) {
       var currentPosition  = (window.scrollY + window.innerHeight) - grid.clientHeight / 2;
       var gridBottom = grid.offsetTop + grid.clientHeight;
+
       if(currentPosition > grid.offsetTop && window.scrollY < gridBottom) {
         myClassAdmin.addClass(grid, 'play__img-overlay--show-img');
+
+        if (myClassAdmin.hasClass(grids[0], 'play__img-overlay--show-img') && myClassAdmin.hasClass(grids[1], 'play__img-overlay--show-img')) {
+          window.removeEventListener('scroll', _showGridImg);
+        }
+
       }
     });
-  }
+  }, 500);
+
+  window.addEventListener('scroll', _showGridImg);
+
 })();
 
 var fadeText = (function() {
   var texts = document.querySelectorAll('.text-effect');
 
-  window.addEventListener('scroll', debounce(_fadeTextCheck, 50));
+  window.addEventListener('scroll', throttle(_fadeTextCheck, 300));
 
   function _fadeTextCheck() {
     Array.from(texts).forEach(function(text) {

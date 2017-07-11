@@ -2,17 +2,20 @@ var insetCart = (function() {
   var imageWrapper = document.getElementById('peripherals-hero');
   var gbCart       = document.getElementById('gb-cart');
 
-  window.addEventListener('scroll', debounce(_checkWrapperPosition, 50));
-
-  function _checkWrapperPosition() {
+  var _checkWrapperPosition = throttle(function() {
     var currentPosition = (window.scrollY + window.innerHeight) - imageWrapper.clientHeight / 2;
     var elementBottom   = imageWrapper.offsetTop + imageWrapper.clientHeight;
 
     if(currentPosition > imageWrapper.offsetTop && window.scrollY < elementBottom) {
       myClassAdmin.addClass(gbCart, 'peripherals__img--insert-cart');
+      window.removeEventListener('scroll', _checkWrapperPosition);
     }
-  }
+  }, 400);
+
+  window.addEventListener('scroll', _checkWrapperPosition);
+
 })();
+
 
 var peripheralsSlider = (function() {
   var imgs0 = document.querySelectorAll('.peripherals__slider-img-0');
