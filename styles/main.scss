@@ -19,6 +19,16 @@ p
 
 .main
   position: relative
+  overflow: hidden
+
+.info-modal
+  overflow: hidden
+.side-nav
+  overflow: hidden
+.main
+  overflow: hidden
+.footer
+  overflow: hidden
 
 @import 'modules/info-modal.sass'
 @import 'modules/nav-side-nav.sass'
