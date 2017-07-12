@@ -41,9 +41,32 @@
       repeat: no-repeat
 
 .site-footer__arrow-up
+  cursor: pointer
+  width: 40px
+  height: 40px
   position: absolute
   top: 50%
   transform: perspective(1px) translateY(-50%)
   right: 120px
-  color: white
-  font-size: 2rem
+  &:hover
+    .svg-arrow-up-g1
+      animation: change-arrow-fill 0.5s ease-in-out infinite
+    .svg-arrow-up-g2
+      animation: change-arrow-fill 0.5s ease-in-out 0.1s infinite
+    .svg-arrow-up-g3
+      animation: change-arrow-fill 0.5s ease-in-out 0.2s infinite
+    .svg-arrow-up-g4
+      animation: change-arrow-fill 0.5s ease-in-out 0.3s infinite
+    .svg-arrow-up-g5
+      animation: change-arrow-fill 0.5s ease-in-out 0.4s infinite
+
+@keyframes change-arrow-fill
+  100%
+    fill: #1E7EAA
+
+.svg-arrow-up
+  width: 100%
+  height: auto
+
+.svg-arrow-up-g
+  fill: white
