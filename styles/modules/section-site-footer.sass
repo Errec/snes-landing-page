@@ -14,9 +14,31 @@
   height: auto
 
 .site-footer__made-by
+  position: relative
   margin-left: 12px
   line-height: 1
   color: white
+
+.site-footer__made-by-snes
+  font-weight: bold
+  letter-spacing: 0.1rem
+.site-footer__made-by-text
+  margin: 0 24px
+  &:after
+    left: -14px
+  &:before
+    left: 110px
+  &:after, &:before
+    position: absolute
+    top: 50%
+    transform: translateY(-70%)
+    content: ''
+    width: 10px
+    height: 10px
+    background:
+      image: url('../img/arrow-r.svg')
+      size: contain
+      repeat: no-repeat
 
 .site-footer__arrow-up
   position: absolute
