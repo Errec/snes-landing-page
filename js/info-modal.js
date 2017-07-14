@@ -11,7 +11,7 @@ var showInfoModal = (function() {
   window.addEventListener('scroll', _checkPosition);
 
   function _checkPosition() {
-    if (window.scrollY > 200) {
+    if (window.scrollY > 450) {
       myClassAdmin.addClass(infoModal, modifierShowClass);
       window.removeEventListener('scroll', _checkPosition);
     }
