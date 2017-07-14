@@ -25,18 +25,21 @@
   position: absolute
   width: 100%
   height: 100%
-  transition: transform 1s ease-in-out
+  transition: width 1s ease-in-out, opacity 0s
+  right: 0
+  top: 0
   background:
-    size: cover
+    position: right center
     repeat: no-repeat
-    position: center
+    size: auto 100%
 
 .peripherals__slider-img-0
   z-index: 30
 
 .peripherals__slider-img--position-0
   z-index: 30
-  transform: translateX(100%)
+  width: 0
+
 .peripherals__slider-img--position-1
   opacity: 0
   z-index: 20
