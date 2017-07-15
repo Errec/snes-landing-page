@@ -2,8 +2,6 @@
   .side-nav
     display: none
 
-  .info-modal
-    display: none
   .info-modal__text-box
     width: 267px
     height: 141px
@@ -86,11 +84,14 @@
     height: 7px
     width: 25px
 
+  .peripherals
+    background-color: rgb(255, 196, 31)
+    background: radial-gradient(ellipse at center, rgba(255, 196, 31,1) 0%, rgba(246,246,246,1) 47%, rgba(255, 196, 31,1) 100%);
   .peripherals__hero
     overflow: hidden
     padding-bottom: 0
     padding-top: 10vh
-    height: 55vh
+    height: 40vh
   .peripherals__title
     font-size: 2.2rem
   .peripherals__img-gb
@@ -108,26 +109,27 @@
       height: auto
 
   .peripherals__sliders
-    padding: 0 0
+    color: white
+    background-color: black
+    padding-right: 0
+    padding-left: 0
+    padding-top: 3vh
     padding-bottom: 5vh
     height: auto
     width: 100%
-
   .peripherals__slider
     float: none
     height: 60vh
     width: 100%
     padding: 0 0
     margin-bottom: 10%
-
   .peripherals__slider-img-wrapper
     text-align: center
     margin: 0 auto
     height: 100%
     width: 90%
-
   .peripherals__slider-img
-    height: 90%
+    height: 85%
     right: 0
     top: 0
     background:
@@ -135,12 +137,146 @@
   .peripherals__slider-text
     position: absolute
     bottom: 0
-    height: 10%
-    margin: 0
+    height: 15%
+    margin: 0 0.2rem
     padding: 0
     p
       font-size: 1.2rem
   .peripherals__slider-legend
-    bottom: 12%
+    outline: 2px solid white
+    bottom: 17%
     p
       font-size: 1.5rem
+
+  .controller
+    padding-top: 2vh
+    width: 100%
+  .controller__title-wrapper
+    width: 80%
+  .controller__title-text
+    font-size: 4rem
+    border-bottom: solid 3px #DA4537
+  .controller__title-sub
+    letter-spacing: 0.05rem
+    font-size: 1.2rem
+    margin-top: 6px
+
+  .controller__pad-img
+    transform: rotate(15deg) translateX(-40%) translateY(-5%)
+  .controller__cable-img
+    transform: rotate(45deg) translateX(5%) translateY(150%)
+  .controller__holding-controller-img
+    width: 100%
+    height: 50vw
+    margin-left: 0
+    margin-right: 0
+    margin-top: -10%
+  .controller__about
+    background:
+      size: cover
+    padding: 0
+    margin: 0
+  .controller__detail-text-wrapper
+    text-align: right
+    margin: 0 4px
+  .controller__detail-text
+    font-size: 1.1rem
+    line-height: 1
+  .controller__quote
+    text-align: center
+    padding: 0 2%
+    float: none
+    width: 100%
+    margin: 16vh 0 5vh 0
+    border-bottom: 2px solid #DA4537
+    border-top: 2px solid #DA4537
+    h2
+      font-size: 2rem
+
+  .controller__info--wrapper
+    float: none
+    width: 100%
+    padding: 0 4%
+    p
+      font-size: 1.3rem
+      line-height: 1.1
+  .controller__info-top
+    margin-bottom: 4vh
+
+  .main-footer__img
+    margin-top: 4vh
+    padding-top: 65vh
+
+  .main-footer__ad
+    height: 35vh
+  .main-footer__logo-img
+    width: 50%
+    height: 50%
+    margin-top: 5%
+  .main-footer__price
+    position: absolute
+    bottom: 2vh
+    h2
+      font-size: 2rem
+
+  .games
+    padding-top: 100vw
+  .games__logo
+    height: 100%
+  .games__title-text
+    position: relative
+    top: -20%
+    font-size: 3rem
+  .games__title-sub-text
+    font-size: 1rem
+    right: 30%
+    bottom: 0
+  .games__sliders
+    height: 55vw
+    margin-top: 20%
+  .games__bg-characters
+    left: 15%
+
+  #games__bg-character-0
+    background:
+      size: 95%
+      position: 450%
+  #games__bg-character-1
+    background:
+      size: 125%
+      position: -43% 40%
+  #games__bg-character-2
+    background:
+      size: 185%
+      position: -15% center
+  #games__bg-character-3
+    background:
+      size: 120%
+      position: left bottom
+  #games__bg-character-4
+    background:
+      size: 240%
+      position: left bottom
+  #games__bg-character-5
+    background:
+      size: cover
+      position: left center
+  #games__bg-character-6
+    background:
+      position: 700% bottom
+      size: 96%
+  #games__bg-character-7
+    background:
+      position: -80% center
+      size: 120%
+
+  .site-footer__credits
+    left: 40px
+
+  .site-footer__made-by
+    display: none
+
+  .site-footer__arrow-up
+    right: 40px
+    width: 30px
+    height: 30px
