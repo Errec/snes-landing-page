@@ -9,20 +9,29 @@ var retractHero = (function() {
   }
 
   function _checkHeroPosition() {
-    if (window.scrollY > 25) {
-      myClassAdmin.addClass(heroDiv, 'hero--retract');
-      myClassAdmin.replaceClass(heroLogo,'hero__logo--show' , 'hero__logo--fade');
-    }
-    if (window.scrollY < 25 && myClassAdmin.hasClass(heroDiv, 'hero--retract')) {
-      myClassAdmin.replaceClass(heroLogo,'hero__logo--fade' , 'hero__logo--show');
-      myClassAdmin.removeClass(heroDiv, 'hero--retract');
+    if(mqMobile.matches) {
+      if (window.scrollY > 25) {
+        myClassAdmin.replaceClass(heroLogo,'hero__logo--show' , 'hero__logo--fade');
+      }
+      if (window.scrollY < 25) {
+        myClassAdmin.replaceClass(heroLogo,'hero__logo--fade' , 'hero__logo--show');
+      }
+    } else {
+        if (window.scrollY > 25) {
+          myClassAdmin.addClass(heroDiv, 'hero--retract');
+          myClassAdmin.replaceClass(heroLogo,'hero__logo--show' , 'hero__logo--fade');
+        }
+        if (window.scrollY < 25 && myClassAdmin.hasClass(heroDiv, 'hero--retract')) {
+          myClassAdmin.replaceClass(heroLogo,'hero__logo--fade' , 'hero__logo--show');
+          myClassAdmin.removeClass(heroDiv, 'hero--retract');
+        }
     }
   }
 })();
 
 var clickHeroArrow = (function() {
   var arrow    = document.getElementById('hero-arrow');
-  var divPlay        = document.querySelector('.play');
+  var divPlay  = document.querySelector('.play');
 
   arrow.addEventListener('click', _scrollDown);
 
