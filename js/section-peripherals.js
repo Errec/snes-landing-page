@@ -3,8 +3,10 @@ var insetCart = (function() {
   var gbCart       = document.getElementById('gb-cart');
 
   var _checkWrapperPosition = throttle(function() {
-    var currentPosition = (window.scrollY + window.innerHeight) - imageWrapper.clientHeight / 2;
+    var currentPosition = 0;
     var elementBottom   = imageWrapper.offsetTop + imageWrapper.clientHeight;
+
+    mqMobile.matches ? currentPosition = ((window.scrollY + window.innerHeight) - imageWrapper.clientHeight) : currentPosition = ((window.scrollY + window.innerHeight) - imageWrapper.clientHeight / 2);
 
     if(currentPosition > imageWrapper.offsetTop && window.scrollY < elementBottom) {
       myClassAdmin.addClass(gbCart, 'peripherals__img--insert-cart');

@@ -3,7 +3,9 @@ var showGridImgs = (function() {
 
   var _showGridImg = throttle(function() {
     Array.from(grids).forEach(function(grid) {
-      var currentPosition  = (window.scrollY + window.innerHeight) - grid.clientHeight / 2;
+      var currentPosition  = 0;
+      mqMobile.matches ? currentPosition = ((window.scrollY + window.innerHeight) - grid.clientHeight) : currentPosition = ((window.scrollY + window.innerHeight) - grid.clientHeight / 2);
+
       var gridBottom = grid.offsetTop + grid.clientHeight;
 
       if(currentPosition > grid.offsetTop && window.scrollY < gridBottom) {
