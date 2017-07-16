@@ -1,3 +1,7 @@
+  var mqMobile = window.matchMedia("(max-width: 767px)");
+
+// External Libraries and snippets from here
+
 //Modified from https://jaketrent.com/post/addremove-classes-raw-javascript/
 var myClassAdmin = {
   hasClass: function(element, myClassName) {

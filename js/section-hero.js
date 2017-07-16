@@ -21,11 +21,16 @@ var retractHero = (function() {
 })();
 
 var clickHeroArrow = (function() {
-  var arrow = document.getElementById('hero-arrow');
+  var arrow    = document.getElementById('hero-arrow');
+  var divPlay        = document.querySelector('.play');
 
   arrow.addEventListener('click', _scrollDown);
 
   function _scrollDown() {
-    window.scrollBy({ top: 300, left: 0, behavior: 'smooth' });
+    if (mqMobile.matches) {
+        divPlay.scrollIntoView({behavior: 'smooth' });
+    } else {
+        window.scrollBy({ top: 300, left: 0, behavior: 'smooth' });
+    }
   }
 })();
