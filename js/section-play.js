@@ -18,7 +18,6 @@ var showGridImgs = (function() {
   }, 500);
 
   window.addEventListener('scroll', _showGridImg);
-
 })();
 
 var fadeText = (function() {
@@ -50,7 +49,7 @@ var modal = (function() {
 
   var countdown      = null;
   var resetTimer     = null;
-  var WIDTH          = 50;
+  var WIDTH          = document.querySelector('.play__grid-modal-slider-img').clientWidth;
   var IMGS_COUNT     = 4;
   var ANIMATION_TIME = 4;
   var myPosition     = 0;
@@ -119,7 +118,7 @@ var modal = (function() {
   function _modalCountdown(position, width, seconds, imgCount) {
     clearInterval(countdown);
     clearInterval(resetTimer);
-    row.style.transform = "translateX(-" + (width * (position - 1)) + "vw)";
+    row.style.transform = "translateX(-" + (width * (position - 1)) + "px)";
     countdown = setInterval(_moveFrame, seconds * 1000);
     _goToImg(progressBars[position - 1], true);
 
@@ -130,7 +129,7 @@ var modal = (function() {
         return;
       }
       _goToImg(progressBars[position], true);
-      row.style.transform = "translateX(-" + width * position + "vw)";
+      row.style.transform = "translateX(-" + width * position + "px)";
       position++;
     }
   }
